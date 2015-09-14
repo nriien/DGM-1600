@@ -1,28 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CandS : MonoBehaviour{
-	private 
-{
-	float HeightTest = 3f;
+public class FlyScript : MonoBehaviour {
+
+	float heightTest = 3f;
 
 	void Start()
+	{
+		Debug.Log (transform);
+		if(transform.position.y <= heightTest)
 		{
-		Debug.Log(transform);
-		if(transform <= HeightTest);
-		Debug.Log("I'm about to hit the ground!");
+			Debug.Log("I'm about to hit the ground!");
+			FlyAway();
 		}
-			
-	void FlyAway()
+		else if(transform.position.y >= heightTest)
 		{
-		if(transform >= HeightTest);
-		Debug.Log("I'm flying!");
+			Debug.Log("I'm flying!");
 		}
-				
+	}
+
 	void FlyAway()
-		{
-		Debug.Log("Fly Away!");
-		Vector3 newPosition = new Vector3 (0, 7, 0);
+	{
+		Debug.Log ("Fly Away!");
+		Vector3 newPosition = new Vector3(0,7,0);
 		transform.position = newPosition;
-		}
+	}
 }
+// hello this is a comment
+/* hello
+ * hello
+ * hello
+*/
