@@ -3,6 +3,13 @@ using System.Collections;
 
 public class OnCollision : MonoBehaviour 
 {
+
+	public void Start()
+	{
+		GameManager2.OnDuckShot += turnOff;
+		GameManager2.OnDuckMiss += turnOff;
+		GameManager2.OnDuckSpawner += turnOn;
+	}
  
  public enum Changer {Horizontal, Vertical};
  public Changer direction;
@@ -24,6 +31,16 @@ public class OnCollision : MonoBehaviour
  			movement.DirectionChanger(new Vector3(1f, -1f, 0));
 		 }
 		}
+	}
+	
+	public void turnOff()
+	{
+		gameObject.SetActive(false);
+	}
+	
+	public void turnOn()
+	{
+		gameObject.SetActive(true);
 	}
 }
 		

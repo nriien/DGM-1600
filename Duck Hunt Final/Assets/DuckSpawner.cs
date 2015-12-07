@@ -3,7 +3,12 @@ using System.Collections;
 
 public class DuckSpawner : MonoBehaviour {
 
-public GameObject Duck;
+	public GameObject Duck;
+	
+	void Start()
+	{
+	GameManager2.OnDuckSpawner += SpawnDuck;
+	}
 
 	public void SpawnDuck()
 		{
