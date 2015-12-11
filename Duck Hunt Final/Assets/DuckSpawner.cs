@@ -10,8 +10,10 @@ public class DuckSpawner : MonoBehaviour {
 	GameManager2.OnDuckSpawner += SpawnDuck;
 	}
 
+
 	public void SpawnDuck()
-		{
-			Instantiate(Duck, transform.position, Quaternion.identity);
-		}
+	{
+	Instantiate(Duck, transform.position, Quaternion.identity);
+	}
+	
 }

@@ -1,15 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DogControl : MonoBehaviour {
+public class DogControl : MonoBehaviour 
+{
+	Animator anim;
+	
+	void Start()
+	{
+		anim = GetComponent<Animator>();
+		GameManager2.OnDuckDeath += PlayDuck;
+		GameManager2.OnDuckFlyAway += PlayLaugh;
+	}
+	
 
-	// Use this for initialization
-	void Start () {
-	
+	public void DuckSpawner()
+	{
+	GameManager2.OnDuckSpawner();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		
+	public void PlayLaugh()
+	{
+	anim.Play("DogLaugh");
 	}
+		
+	public void PlayDuck()
+	{
+	anim.Play("DogDuck");
+	}
+
 }

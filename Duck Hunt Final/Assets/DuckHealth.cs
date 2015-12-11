@@ -9,8 +9,9 @@ public class DuckHealth : MonoBehaviour {
 	
 	void Start()
 	{
+	anim = GetComponent<Animator>();
 	GameManager2.OnDuckMiss += MakeInvincible;
-	GameManager2.OnDuckShot += MakeInvincible;
+	//GameManager2.OnDuckShot += MakeInvincible;
 	}
 
 	void OnTriggerEnter (Collider hit)
